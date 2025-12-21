@@ -1,0 +1,368 @@
+focus_tree = {
+	id = VIH_focus_tree
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = VIH
+		}
+	}
+	default = no
+	continuous_focus_position = { x = 50 y = 1800 }
+	focus = {
+		id = create_vih
+		icon = GFX_focus_AFG_adopt_nufus
+		cost = 10
+		x = 8
+		y = 2
+		completion_reward = {
+			# Награда за выполнение фокуса
+		}
+	}
+	focus = {
+		id = Grey_fashism
+		icon = GFX_focus_ARG_firmes_volamos
+		cost = 10
+		prerequisite = {
+			focus = create_vih
+		}
+		mutually_exclusive = {
+			focus = android_democraty
+			focus = yegor_mechanik
+		}
+		x = 1
+		y = 4
+		completion_reward = {
+			set_politics = {
+				ruling_party = fascism
+				elections_allowed = no
+				last_election = "0"
+				election_frequency = 0
+				long_name = "Партия Верховного Предводителя и Главнокомандующего Фервенто и Выхухоли - Грея Хавронова Пельша"
+				name = "Партия Грея"
+			}
+			create_country_leader = {
+				name = "Грей Хавронов Пельш"
+				desc = " J"
+				picture = "gfx/leaders/VIH/Grey.dds"
+				expire = "2030.1.1.1"
+				ideology = fascism_ideology
+				traits = { war_industrialist }
+			}
+		}
+	}
+	focus = {
+		id = invite_lavas
+		icon = GFX_goal_unknown
+		cost = 10
+		prerequisite = {
+			focus = create_vih
+		}
+		x = 4
+		y = 3
+		completion_reward = {
+		 country_event = { id = lavas.1 }
+}
+	}
+	focus = {
+		id = yegor_mechanik
+		icon = GFX_focus_AUS_union_of_danubian_socialist_republics
+		cost = 10
+		prerequisite = {
+			focus = create_vih
+		}
+		mutually_exclusive = {
+			focus = Grey_fashism
+			focus = android_democraty
+		}
+		x =7
+		y = 4
+		completion_reward = {
+			create_country_leader = {
+				name = "Yegor Mechanik"
+				desc = "POLITICS_YEGOR_MECHANIK_DESC"
+				picture = "gfx/leaders/VIH/egor_mechanik.dds"
+				expire = "2030.1.1.1"
+				ideology = anarchist_communism
+				traits = { war_industrialist }
+			}
+			set_politics = {
+				ruling_party = communism
+				elections_allowed = yes
+				last_election = "1935.12.17"
+				election_frequency = 48
+				long_name = "Объединенный клан Крошеровцев"
+				name = "Партия Егора"
+			}
+		}
+	}
+	focus = {
+		id = android_democraty
+		icon = GFX_focus_AFG_pashtunistan_referendum
+		cost = 10
+		prerequisite = {
+			focus = create_vih
+		}
+		mutually_exclusive = {
+			focus = Grey_fashism
+			focus = yegor_mechanik
+		}
+		x = 15
+		y = 4
+		filter = historical_path
+		completion_reward = {
+			create_country_leader = {
+				name = "Андроид"
+				desc = " "
+				picture = "gfx/leaders/VIH/Android.dds"
+				expire = "2030.1.1.1"
+				ideology = conservatism
+				traits = { war_industrialist }
+			}
+			set_politics = {
+				ruling_party = democratic
+				elections_allowed = no
+				last_election = "1935.12.17"
+				election_frequency = 48
+				long_name = "Свободное демократическое клан-государство 'Выхухоль'"
+				name = "Партия Андроида"
+			}
+		}
+	}
+	focus = {
+		id = zamestitel_glavi_grey
+		icon = GFX_focus_AFG_contact_amanullah_loyalists_alt
+		cost = 10
+		prerequisite = {
+			focus = android_democraty
+		}
+		mutually_exclusive = {
+			focus = zamestitel_glavi_lubitel_zv
+		}
+		x = 12
+		y = 5
+		filter = historical_path
+		completion_reward = {
+			add_advisor_role = {
+				character = VIH_Grey
+				activate = yes
+				advisor = {
+					slot = political_advisor
+					cost = 50
+					idea_token = VIH_Grey_P_A
+					traits = {
+						air_chief_ground_support_2
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = build_clan_base
+		icon = GFX_focus_AFG_parliamentary_democracy
+		cost = 10
+		prerequisite = {
+			focus = android_democraty
+		}
+		x = 20
+		y = 6
+		filter = historical_path
+	}
+	focus = {
+		id = sozdat_ogorod
+		icon = GFX_focus_CHL_protect_the_easter_island
+		cost = 10
+		prerequisite = {
+			focus = build_clan_base
+		}
+		x = 18
+		y = 7
+		filter = historical_path
+	}
+	focus = {
+		id = build_nether_portal
+		icon = GFX_focus_AST_squander_bug
+		cost = 10
+		prerequisite = {
+			focus = sozdat_ogorod
+		}
+		x = 18
+		y = 8
+		filter = historical_path
+	}
+	focus = {
+		id = pohod_v_ad
+		icon = GFX_focus_AST_squander_bug
+		cost = 10
+		prerequisite = {
+			focus = build_nether_portal
+		}
+		x = 18
+		y = 9
+		filter = historical_path
+		completion_reward = {
+		country_event = { id = android_left_timer.1 days = 14 }
+			}
+	}
+	focus = {
+		id = new_floor_two
+		icon = GFX_focus_AFG_parliamentary_democracy
+		cost = 10
+		filter = historical_path
+		prerequisite = {
+			focus = build_clan_base
+		}
+		x = 22
+		y = 8
+	}
+	focus = {
+		id = invite_lubitel_zv
+		icon = GFX_focus_GFX_focus_VIH_invite_Lubitel_ZV
+		cost = 10
+		prerequisite = {
+			focus = create_vih
+		}
+		x = 23
+		y = 3
+		filter = historical_path
+		completion_reward = {
+			add_field_marshal_role = {
+				character = VIH_Lubitel_ZV
+				traits = { trait_cautious fast_planner thorough_planner organisational_leader adaptable infantry_expert panzer_expert cavalry_expert expert_improviser guerilla_fighter }
+				skill = 31
+				attack_skill = 5
+				defense_skill = 3
+				planning_skill = 4
+				logistics_skill = 6
+			}
+			annex_country = {
+				target = LUB
+				transfer_troops = yes
+			}
+		}
+	}
+	focus = {
+		id = new_leader_grey
+		icon = GFX_focus_AST_squander_bug
+		cost = 10
+		prerequisite = {
+			focus = zamestitel_glavi_grey
+			focus = pohod_v_ad
+		}
+		x = 12
+		y = 10
+		filter = historical_path
+		completion_reward = {
+			set_politics = {
+				ruling_party = neutrality
+				elections_allowed = no
+				last_election = "0"
+				election_frequency = 0
+				long_name = "Императора, Царя и Великого Князя Выхухоли и князя Крошатского, Сунгульского, Свято-Андроидского, Ферниунского, Верховного главнокомандующего Сухопутными, Ракетными, Космическими, Пехотными, Морскими, Добровольческими войсками, президента Инфернио, Парагена, Империума, Хаотики, последнего и первого правителя ОЗПГХ, заместителя главы клана Выхухоль, патриарха Выхухолианства, редактора ВАГИНА, верховного предводителя и главнокомандующего Фервенто, CELADA_number1, Грея official, Хавронова Пельша Грея Первого Великолепного"
+				name = "Партия Грея"
+			}
+			create_country_leader = {
+				name = "Грей Хавронов Пельш"
+				desc = "POLITICS_GREY_DESC"
+				picture = "gfx/leaders/VIH/Grey.dds"
+				expire = "1965.1.1.1"
+				ideology = despotism
+				traits = { war_industrialist }
+			}
+			set_party_name = {
+			ideology = democratic
+			name = "Партия Демократической Выхухоли"
+			long_name = "Партия Демократической Выхухоли под управлением Любителя ЗВ"
+			}
+			create_country_leader = {
+				name = "Любитель ЗВ"
+				desc = "POLITICS_GREY_DESC"
+				picture = "gfx/leaders/VIH/Lubitel_ZV.dds"
+				expire = "1965.1.1.1"
+				ideology = liberalism
+				traits = { war_industrialist }
+		
+
+		}
+	}
+}
+	focus = {
+		id = zamestitel_glavi_lubitel_zv
+		icon = GFX_focus_AFG_against_kabul
+		cost = 10
+		prerequisite = {
+			focus = invite_lubitel_zv
+		}
+		mutually_exclusive = {
+			focus = zamestitel_glavi_grey
+		}
+		x = 26
+		y = 5
+		completion_reward = {
+			add_advisor_role = {
+				character = VIH_Lubitel_ZV
+				activate = yes
+				advisor = {
+					slot = political_advisor
+					cost = 50
+					idea_token = VIH_Lubitel_ZV_P_A
+					traits = {
+						air_chief_ground_support_2
+					}
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = new_leader_lubitel_zv
+		icon = GFX_focus_AFG_promote_the_counter_elite
+		cost = 10
+		prerequisite = {
+			focus = zamestitel_glavi_lubitel_zv
+		}
+		x = 26
+		y = 11
+		completion_reward = {
+			set_politics = {
+				ruling_party = democratic
+				elections_allowed = no
+				last_election = "0"
+				election_frequency = 0
+				long_name = "Партия Демократической Выхухоли под управлением Любителя ЗВ"
+				name = "Партия Демократической Выхухоли"
+			}
+			create_country_leader = {
+				name = "Любитель ЗВ"
+				desc = "Самый молодой из известных крошеровцев, но уже написал этот мод"
+				picture = "gfx/leaders/VIH/Lubitel_ZV.dds"
+				expire = "2030.1.1.1"
+				ideology = liberalism
+				traits = { war_industrialist }
+			}
+		}
+	}
+	focus = {
+		id = vihuholianstvo
+		icon = GFX_focus_AFG_promote_the_counter_elite
+		cost = 10
+		x = 6
+		y = 12
+		filter = historical_path
+		prerequisite = {
+			focus = kultvihuholi_1
+			focus = new_leader_grey
+		}
+	}
+focus = {
+		id = kultvihuholi_1
+		icon = GFX_focus_AFG_promote_the_counter_elite
+		cost = 10
+		x = 1
+		y = 10
+		prerequisite = {
+			focus = Grey_fashism
+		}
+	}
+
+}

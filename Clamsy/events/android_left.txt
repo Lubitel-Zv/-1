@@ -1,0 +1,43 @@
+add_namespace = android_left
+
+country_event = {
+    id = android_left.1
+    title = "android_left.1.t"
+    desc = "android_left.1.d"
+    picture = Sgorel
+    hidden = no
+    fire_only_once = yes
+    
+    is_triggered_only = yes
+    
+    immediate = {
+        # Можно добавить какие-то скрытые эффекты здесь
+    }
+    
+    option = {
+        name = "android_left.1.a"
+        custom_effect_tooltip = "Вся власть перешла заместителю Андроида..."
+        
+        # Потом сделаем так, чтобы он пропал и его заменил Грей на демократии
+        add_political_power = -10
+        add_stability = -10
+	set_politics = {
+		ruling_party = democratic
+		elections_allowed = no
+		last_election = "0"
+		election_frequency = 0
+		long_name = "Партия Демократической Выхухоли под временным управлением Грея Хавронова Пельша"
+        name = "Партия Демократической Выхухоли"
+    }
+        create_country_leader = {
+            name = "Грей Хавронов Пельш"
+            desc = "POLITICS_GREY_DESC"
+            picture = "gfx/leaders/VIH/Grey.dds"
+            expire = "1965.1.1.1"
+            ideology = conservatism
+            traits = { war_industrialist }
+        }
+        # Звук
+        # sound_effect = "computer_error_sound"
+    }
+}

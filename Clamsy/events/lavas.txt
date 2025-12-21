@@ -1,0 +1,28 @@
+add_namespace = lavas
+
+country_event = {
+    id = lavas.1
+    title = "lavas.1.t"
+    desc = "lavas.1.d"
+    picture = GFX_report_event_computer_problems
+    hidden = no
+    fire_only_once = yes
+    
+    is_triggered_only = yes
+    
+    immediate = {
+        # Можно добавить какие-то скрытые эффекты здесь
+    }
+    
+    option = {
+        name = "lavas.1.a"
+        custom_effect_tooltip = "Твои обои никогда не будут прежними..."
+        
+        # Здесь будут эффекты, которые создают иллюзию "вируса"
+        add_political_power = -10
+        add_stability = -0.01
+        
+        # Можно добавить звуковой эффект (если есть подходящий)
+        # sound_effect = "computer_error_sound"
+    }
+}

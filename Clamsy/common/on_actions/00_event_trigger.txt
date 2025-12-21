@@ -1,0 +1,17 @@
+on_actions = {
+    on_national_focus_complete = {
+        effect = {
+            # EVENT_TARGET - это страна, которая завершила фокус
+            if = {
+                limit = {
+                    EVENT_TARGET = {
+                        has_completed_focus = invite_lavas
+                    }
+                }
+                EVENT_TARGET = {
+                    country_event = { id = lavas.1 }
+                }
+            }
+        }
+    }
+}

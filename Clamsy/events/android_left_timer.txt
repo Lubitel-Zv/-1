@@ -1,0 +1,16 @@
+add_namespace = android_left_timer
+
+# Это событие-таймер. Оно сработает автоматически через 14 дней после завершения фокуса.
+country_event = {
+    id = android_left_timer.1
+    title = "android_left_timer.1.t" # Можно сделать пустым или невидимым
+    desc = "android_left_timer.1.d"  # Можно сделать пустым или невидимым
+    hidden = yes # Скрываем событие, чтобы игрок его не видел
+    fire_only_once = yes
+    is_triggered_only = yes # Важно! Срабатывает только по таймеру или другому событию.
+
+    immediate = {
+        # Единственная цель этого события - запустить финальное событие для игрока
+        country_event = { id = android_left.1 }
+    }
+}
