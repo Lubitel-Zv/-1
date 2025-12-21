@@ -1,4 +1,4 @@
-version="1.16.*"
+version="1.17.*"
 tags={
 	"Alternative History"
 	"Events"
@@ -12,5 +12,5 @@ tags={
 	"Ideologies"
 }
 name="Clamsy"
-supported_version="1.16.*"
+supported_version="1.17.*"
 path="D:/Games/Hearts of Iron IV/Mods/Paradox Interactive/Hearts of Iron IV/mod/Clamsy"
