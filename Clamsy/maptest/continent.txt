@@ -1,4 +1,0 @@
-continents = {
-	ostrov
-	gl_ostrov
-}
