@@ -1,0 +1,60 @@
+﻿characters = {
+	VIH_Lubitel_ZV = {
+		name = "VIH_Lubitel_ZV"
+		portraits = {
+			civilian = {
+				small = "gfx/leaders/VIH/GFX_Lubitel_ZV_small.dds"
+				large = "gfx/leaders/VIH/GFX_Lubitel_ZV.dds"
+			}
+			army = {
+				large = "gfx/leaders/VIH/GFX_Lubitel_ZV.dds"
+				small = "gfx/leaders/VIH/GFX_Lubitel_ZV_small.dds"
+			}
+		}			
+		advisor = {
+			slot = political_advisor
+			idea_token = VIH_Lubitel_ZV_P_A
+			ledger = all
+			cost = 10
+			can_be_fired = yes
+			allowed = {
+				original_tag = VIH
+			}
+			traits = {
+				war_industrialist
+			}
+		}
+	}
+	
+	VIH_Grey = {
+		name = "VIH_Grey"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/VIH/Grey.dds"
+			}
+			army = {
+				large = "gfx/leaders/VIH/Grey.dds"
+				small = "gfx/leaders/VIH/Grey_small.dds"
+			}
+		}
+		country_leader = {
+			expire = "2030.1.1.1"
+			ideology = despotism
+			traits = { war_industrialist }
+			id = 993		
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = VIH_Grey_P_A
+			ledger = all
+			cost = 10
+			can_be_fired = yes
+			allowed = {
+				original_tag = VIH
+			}
+			traits = {
+				war_industrialist
+			}
+		}
+	}
+}
